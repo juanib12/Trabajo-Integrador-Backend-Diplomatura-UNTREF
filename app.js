@@ -68,12 +68,13 @@ app.get("/productos/nombre/:nombre", async (req, res) => {
   
 //Agregar un nuevo producto.
 app.post("/productos", async (req, res) => {
-  const producto = new Producto(req.body);
-
+  
   try {
     if ( !req.body.codigo || !req.body.nombre || !req.body.precio || !req.body.categoria ) {
       return res.status(400).json({ error: "Complete todos los campos para continuar." });
     }
+
+    const producto = new Producto(req.body);
 
     await producto.save();
     res.status(201).json({ message: "Se creo con exito el producto: ", producto });
