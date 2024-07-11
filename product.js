@@ -1,12 +1,12 @@
 const mongoose = require('mongoose')
 
-const prendaSchema = new mongoose.Schema({
+const ProductoSchema = new mongoose.Schema({
   codigo: Number,
   nombre: String,
   precio: Number,
   categoria: String,
 })
 
-const Prenda = mongoose.model('Prenda', prendaSchema)
+const Producto = mongoose.model('productos', ProductoSchema)
 
-module.exports = Prenda
+module.exports = Producto

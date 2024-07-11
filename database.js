@@ -1,11 +1,8 @@
 const mongoose = require('mongoose')
-process.loadEnvFile()
-
-const URI = process.env.MONGODB_URLSTRING
+require('dotenv').config();
 
 const connectDB = () => {
-  return mongoose
-    .connect(URI)
+  return mongoose.connect(process.env.MONGODB_URLSTRING)
     .then(() => console.log('Conectado a MongoDB'))
     .catch((err) => console.log('Error al conectarse : ', err))
 }
