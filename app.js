@@ -86,9 +86,10 @@ app.post("/productos", async (req, res) => {
 //Modificar el precio de un producto (parcialmente).
 app.patch("/productos/:id", async (req, res) => {
   const { id } = req.params;
+  const { precio } = req.body;
 
   try {
-    const producto = await Producto.findByIdAndUpdate(id, req.body, { new: true });
+    const producto = await Producto.findByIdAndUpdate(id, precio, { new: true });
 
     if (!producto) {
       return res.status(404).json({ error: "Producto no encontrado" });
