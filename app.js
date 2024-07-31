@@ -12,7 +12,7 @@ connectDB();
 app.use(express.json());
 
 app.get("/", (req, res) => {
-    res.json("Bienvenido!");
+    res.json("Bienvenido a la API REST de Prendas de ropa, Desarrollado por: Juan Ignacio Bianco!");
 });
 
 //Devuelve todos los productos.
@@ -89,7 +89,7 @@ app.patch("/productos/:id", async (req, res) => {
   const { precio } = req.body;
 
   try {
-    const producto = await Producto.findByIdAndUpdate(id, precio, { new: true });
+    const producto = await Producto.findByIdAndUpdate(id, { precio }, { new: true });
 
     if (!producto) {
       return res.status(404).json({ error: "Producto no encontrado" });
@@ -129,5 +129,5 @@ app.get("*", (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Servidor escuchando en: http://localhost:${port}`);
+  console.log(`Servidor escuchando en: http://localhost:${port}`);
 });

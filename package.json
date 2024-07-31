@@ -1,7 +1,19 @@
 {
+  "name": "trabajo-integrador-backend-diplomatura-untref",
+  "description": "Este proyecto se basa en una aplicación utilizando Node.js y MongoDB para gestionar una colección de prendas de ropa. La API permite realizar operaciones CRUD (Crear, Leer, Actualizar y Borrar) sobre los productos.",
+  "version": "1.0.0",
+  "main": "app.js",
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mongoose": "^8.4.4"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
